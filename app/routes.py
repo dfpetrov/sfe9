@@ -144,7 +144,7 @@ def edit_event(_id):
             return "Это не твое событие. Редактировать нельзя"
 
 
-@app.route('/delete_event/<_id>', methods=['DELETE'])
+@app.route('/delete_event/<_id>', methods=['POST'])
 def delete_event(_id):
     event = Event.query.get_or_404(_id)
     if current_user.email == event.user_id:
