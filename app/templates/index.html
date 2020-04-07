@@ -13,7 +13,7 @@
 </head>
 <body>
 <h1 class="my-4">Текущий юзер</h1>
-<h2 class="my-4">{{current_user}}</h2>
+<h2 class="my-4">{{current_user.email}}</h2>
 
 <a class="btn btn-success my-4" href="{{ url_for('login') }}" role="button">Войти</a>
 <a class="btn btn-primary my-4" href="{{ url_for('create_event') }}" role="button">Создать событие</a>

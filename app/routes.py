@@ -103,7 +103,7 @@ def delete_forecast(_id):
 @app.route('/hello')
 def index():
     events = Event.query.all()
-    return render_template('index.html', events=events, current_user=current_user.email)
+    return render_template('index.html', events=events, current_user=current_user)
 
 
 @app.route("/create_event", methods=["GET", "POST"])
