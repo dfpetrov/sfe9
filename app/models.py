@@ -70,3 +70,6 @@ class Event(db.Model):
 
     def get_absolute_url(self):
         return url_for('edit_event', _id=self._id)
+
+    def get_del_url(self):
+        return url_for('delete_event', _id=self._id)

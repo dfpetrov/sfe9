@@ -42,7 +42,9 @@
       <td>{{event.title}}</td>
       <td>{{event.description}}</td>
         {% if event.user_id == current_user.email %}
-        <td><a href="{{ event.get_absolute_url() }}">Изменить</a></td>
+        <td><a href="{{ event.get_absolute_url() }}">Изменить</a><br>
+        <a href="{{ event.get_del_url() }}">Удалить</a>
+        </td>
         {% else %}
         <td>х</td>
         {% endif %}

@@ -144,6 +144,14 @@ def edit_event(_id):
             return "Это не твое событие. Редактировать нельзя"
 
 
+@app.route('/delete_event/<_id>', methods=['DELETE'])
+def delete_event(_id):
+    event = Event.query.get_or_404(_id)
+    db.session.delete(event)
+    db.commit()
+    return redirect("/")
+
+
 @app.route('/time')
 def current_time():
     return make_response(jsonify(time=datetime.now()), 201)
