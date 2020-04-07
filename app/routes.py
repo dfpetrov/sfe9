@@ -149,7 +149,7 @@ def delete_event(_id):
     event = Event.query.get_or_404(_id)
     if current_user.email == event.user_id:
         db.session.delete(event)
-        db.commit()
+        db.session.commit()
         return redirect("/")
     else:
         return "Это не твое событие. Удалить нельзя"
