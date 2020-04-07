@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="formwrapper">
+    <h2 class="title">Create event</h2>
+    <form method="POST" action="/create_event">
+        {{ form.csrf_token }}
+        <div class="form-field">{{ form.start.label }} {{ form.start }}</div>
+        <div class="form-field">{{ form.end.label }} {{ form.end }}</div>
+        <div class="form-field">{{ form.title.label }} {{ form.title }}</div>
+        <div class="form-field">{{ form.description.label }} {{ form.description }}</div>
+        <input type="submit" value="Go">
+        {{ form.submit }}
+    </form>
+</div>
+</body>
+</html>
