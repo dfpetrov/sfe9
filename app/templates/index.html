@@ -41,7 +41,7 @@
       <td>{{event.end}}</td>
       <td>{{event.title}}</td>
       <td>{{event.description}}</td>
-        {% if event.user_id == current_user %}
+        {% if event.user_id == current_user.email %}
         <td><a href="{{ event.get_absolute_url() }}">Изменить</a></td>
         {% else %}
         <td>х</td>
