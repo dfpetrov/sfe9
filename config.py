@@ -10,3 +10,4 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     #SECRET_KEY = environ.get('SECRET_KEY')
     SECRET_KEY = 'this - really - needs - to - be - changed'
+
