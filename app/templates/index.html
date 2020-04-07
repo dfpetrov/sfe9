@@ -43,7 +43,15 @@
       <td>{{event.description}}</td>
         {% if event.user_id == current_user.email %}
         <td><a href="{{ event.get_absolute_url() }}">Изменить</a><br>
-        <a href="{{ event.get_del_url() }}">Удалить</a>
+
+
+
+          <form method="DELETE" action="{{event.get_del_url()}}">
+        {{ form.csrf_token }}
+        <input type="submit" value="Удалить">
+        {{ form.submit }}
+    </form>
+
         </td>
         {% else %}
         <td>х</td>
