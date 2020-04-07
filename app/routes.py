@@ -147,9 +147,12 @@ def edit_event(_id):
 @app.route('/delete_event/<_id>', methods=['DELETE'])
 def delete_event(_id):
     event = Event.query.get_or_404(_id)
-    db.session.delete(event)
-    db.commit()
-    return redirect("/")
+    if current_user.email == event.user_id:
+        db.session.delete(event)
+        db.commit()
+        return redirect("/")
+    else:
+        return "Это не твое событие. Удалить нельзя"
 
 
 @app.route('/time')
